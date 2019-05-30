@@ -13,12 +13,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 5.transaction end
  you will write all other info in Aspect and will have only business logic in spring framework*/
 
-
 //Aspect Oriented programming
 //cross cutting concerns  --> Aspect
-
-
-
 public class App {
 
 	public static void main(String[] args) {

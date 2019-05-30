@@ -14,7 +14,7 @@ public class Samsung {
 	public MobileProcesser getCpu() {
 		return cpu;
 	}
-	
+
 	public void setCpu(MobileProcesser cpu) {
 		this.cpu = cpu;
 	}
