@@ -9,7 +9,7 @@ public class StudentRepositery {
 		public StudentRepositery() {
 			studs = new ArrayList<Student>();
 			
-			System.out.println("StudentRepositery is getting called");
+			System.out.println("StudentRepositery constructor is getting called");
 			Student s1= new Student();
 			s1.setId(101);
 			s1.setName("Sagar");
@@ -25,21 +25,23 @@ public class StudentRepositery {
 	}
 		//Get students
  		public  List<Student> getStuds(){			
+ 			System.out.println(" repo get Studs called");
 			return studs;			
 		}
  		
  		//Get particular student id details
  		public Student getStud(int id){			
-			
+			System.out.println(" repo getStud called");
  			for (Student s : studs) {
  				if (s.getId()== id)
  					return s;
  			}
- 			return null; 			
+ 			return new Student(); 			
 		}
  		
  		
 		public void create(Student s1) {
+			System.out.println(" repo create called");
 			studs.add(s1);			
 		}
 

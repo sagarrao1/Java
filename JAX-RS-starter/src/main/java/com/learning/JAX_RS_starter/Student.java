@@ -36,7 +36,13 @@ public class Student {
 	
 	public void setPoints(int points) {
 		this.points = points;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", points=" + points + "]";
 	}	
+	
 	
 
 }
