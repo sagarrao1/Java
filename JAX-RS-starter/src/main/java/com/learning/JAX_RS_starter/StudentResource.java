@@ -16,7 +16,7 @@ public class StudentResource {
 	StudentRepositery repo= new StudentRepositery();
 	
 	@GET
-	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+	@Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
 	public List<Student> getStudents() {		
 		System.out.println("getStudents called .. 1");
 		return repo.getStuds();
