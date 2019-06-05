@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class Student {
 	
 	@Autowired
-	@Qualifier("dellLaptop")
+	@Qualifier("hpLaptop")
 	Laptop lp;
 	
 	public Laptop getLp() {
