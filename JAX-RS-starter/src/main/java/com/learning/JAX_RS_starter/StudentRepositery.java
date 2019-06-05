@@ -45,7 +45,7 @@ public class StudentRepositery {
  		public  List<Student> getStuds() {		
  			studs = new ArrayList<Student>();
  			System.out.println(" repo get Studs called");
- 			String sql= " select * from student";
+ 			String sql= " select * from student order by id";
  			try {
 				Statement st = con.createStatement();
 				ResultSet rs= st.executeQuery(sql);
@@ -66,13 +66,13 @@ public class StudentRepositery {
  		
  		//Get particular student id details
  		public Student getStud(int id){			
- 			Student s= new Student();
+ 			Student s=new Student();
  			
  			String sql= " select * from student where id="+id;
  			try {
 				Statement st = con.createStatement();
 				ResultSet rs= st.executeQuery(sql);
-				if ( rs.next()) {					
+				if ( rs.next()) {	
 					s.setId(rs.getInt("id"));
 					s.setName(rs.getString("name"));
 					s.setPoints(rs.getInt("points"));					
@@ -82,6 +82,7 @@ public class StudentRepositery {
 			}			
  			
  			System.out.println("Before return");
+ 			System.out.println(s);
 			return s; 			
 		}
  		
@@ -103,4 +104,37 @@ public class StudentRepositery {
  							
 		}
 
+		//UPDATE
+		public void update(Student s1) {
+			System.out.println(" repo update called");			
+			 			
+ 			String sql= "update restdb.student set name =?,points=? where id=?";
+ 			try {
+				PreparedStatement st = con.prepareStatement(sql);				
+				st.setString(1, s1.getName());
+				st.setInt(2, s1.getPoints());
+				st.setInt(3, s1.getId());
+				int count = st.executeUpdate();
+				System.out.println("updated count is :"+count);
+			} catch (Exception e) {				
+				System.out.println(e);
+			}		
+ 							
+		}
+
+		//DELETE
+		public void delete(int id) {
+			System.out.println(" repo update called");			
+			 			
+ 			String sql= "delete from restdb.student where id=?";
+ 			try {
+				PreparedStatement st = con.prepareStatement(sql);				
+				st.setInt(1, id);
+				int count = st.executeUpdate();
+				System.out.println("deleted count is :"+count);
+			} catch (Exception e) {				
+				System.out.println(e);
+			}		
+ 							
+		}		
 }
