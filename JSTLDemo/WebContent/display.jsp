@@ -20,7 +20,7 @@
 	<%-- <c:forEach items="${students}" var="s">
 		${s.name}<br/>
 	</c:forEach> --%>
-	
+	 <h4> Connets to mysql database and get task records from tasks table: </h4> </br></br></br></br> 
 	<sql:setDataSource var="db" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/sys" user="root" password="admin"/>
 	<sql:query var="rs" dataSource="${db}" >select * from tasks</sql:query>
 	
