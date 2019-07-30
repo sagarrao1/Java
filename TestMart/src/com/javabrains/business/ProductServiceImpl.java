@@ -1,5 +1,5 @@
 
-package com.javabrains;
+package com.javabrains.business;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ public class ProductServiceImpl {
 	List<String> MovieList = new ArrayList<>();
 	List<String> GameList = new ArrayList<>();
 
-	ProductServiceImpl() {
+	public ProductServiceImpl() {
 		bookList.add("JoyLand");
 		bookList.add("How to think rich");
 		bookList.add("Ramayana");
@@ -39,12 +39,13 @@ public class ProductServiceImpl {
 	}
 
 	public List<String> getProducts( String category){
-		switch (category.toLowerCase()) {
+		switch (category) {
 		case "Books":
 			return bookList;		
 		case "Music":
 			return MusicList;		
 		case "Movies":
+			System.out.println("in Movies ......");
 			return MovieList;
 		case "Games":
 			return GameList;
@@ -53,5 +54,28 @@ public class ProductServiceImpl {
 		}
 	}
 	
-	
+
+	public boolean addProduct( String category, String product){
+		
+		switch (category) {
+		case "Books" :
+			 bookList.add(product);
+			 break;
+		case "Music" :
+			MusicList.add(product);
+			break;
+		case "Movies" :		
+			MovieList.add(product);
+			System.out.println("In Movie added to list");
+			break;
+		case "Games" :
+			 GameList.add(product);
+			 break;
+		default :
+			return false;		
+		}
+		return true;
+	}
+
+
 }
