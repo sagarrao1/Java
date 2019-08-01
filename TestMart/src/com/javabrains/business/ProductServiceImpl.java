@@ -1,8 +1,10 @@
 
-package com.javabrains;
+package com.javabrains.business;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.javabrains.model.Product;
 
 public class ProductServiceImpl {
 	List<String> bookList = new ArrayList<>();
@@ -10,7 +12,7 @@ public class ProductServiceImpl {
 	List<String> MovieList = new ArrayList<>();
 	List<String> GameList = new ArrayList<>();
 
-	ProductServiceImpl() {
+	public ProductServiceImpl() {
 		bookList.add("JoyLand");
 		bookList.add("How to think rich");
 		bookList.add("Ramayana");
@@ -39,12 +41,13 @@ public class ProductServiceImpl {
 	}
 
 	public List<String> getProducts( String category){
-		switch (category.toLowerCase()) {
+		switch (category) {
 		case "Books":
 			return bookList;		
 		case "Music":
 			return MusicList;		
 		case "Movies":
+			System.out.println("in Movies ......");
 			return MovieList;
 		case "Games":
 			return GameList;
@@ -53,5 +56,36 @@ public class ProductServiceImpl {
 		}
 	}
 	
+
+	public boolean addProduct( String category, String product){
+		
+		switch (category) {
+		case "Books" :
+			 bookList.add(product);
+			 break;
+		case "Music" :
+			MusicList.add(product);
+			break;
+		case "Movies" :		
+			MovieList.add(product);
+			System.out.println("In Movie added to list");
+			break;
+		case "Games" :
+			 GameList.add(product);
+			 break;
+		default :
+			return false;		
+		}
+		return true;
+	}
+
+	public List<Product> getProductsV2( String category){
+		 List<Product> product_List= new ArrayList<>();
+		 product_List.add(new Product("javaBrains","1234",45.56));
+		 product_List.add(new Product("thinkRich","1235",95.96));
+		 product_List.add(new Product("javaBrains","1236",215.83));
+		return product_List;		
+		}
 	
+
 }
