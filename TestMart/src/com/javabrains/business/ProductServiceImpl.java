@@ -4,6 +4,8 @@ package com.javabrains.business;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.javabrains.model.Product;
+
 public class ProductServiceImpl {
 	List<String> bookList = new ArrayList<>();
 	List<String> MusicList = new ArrayList<>();
@@ -77,5 +79,13 @@ public class ProductServiceImpl {
 		return true;
 	}
 
+	public List<Product> getProductsV2( String category){
+		 List<Product> product_List= new ArrayList<>();
+		 product_List.add(new Product("javaBrains","1234",45.56));
+		 product_List.add(new Product("thinkRich","1235",95.96));
+		 product_List.add(new Product("javaBrains","1236",215.83));
+		return product_List;		
+		}
+	
 
 }

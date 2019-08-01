@@ -6,26 +6,31 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 
 import com.javabrains.business.ProductServiceImpl;
+import com.javabrains.model.Product;
 
-@WebService
-public class ProductCatalog {
+@WebService(endpointInterface = "com.javabrains.ProductCatalogInterface")
+public class ProductCatalog implements ProductCatalogInterface {
 	
 	ProductServiceImpl productService= new ProductServiceImpl();
 		
-	@WebMethod
+	@Override	
 	 public List<String> getProductCatergories(){
 			return productService.getProductCatergories();
 	} 
 
-	@WebMethod
+	@Override		
 	 public List<String> getProducts(String category){
 		   return productService.getProducts(category);
 	}
 
-	@WebMethod
+	@Override	
 	 public boolean addProduct(String category,String product){
 		   return productService.addProduct(category, product);
 	}
 
+	@Override		
+	 public List<Product> getProductsV2(String category){
+		   return productService.getProductsV2(category);
+	}
 
 }
