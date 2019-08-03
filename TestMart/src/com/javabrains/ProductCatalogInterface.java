@@ -3,11 +3,12 @@ package com.javabrains;
 import java.util.List;
 
 import javax.jws.WebMethod;
+import javax.jws.WebResult;
 import javax.jws.WebService;
 
 import com.javabrains.model.Product;
 
-@WebService(name = "TestMartCatalog", serviceName = "TestMartCatalogService", portName = "TestMartCatalogPort", 
+@WebService(name = "TestMartCatalog", 
 						targetNamespace = "http://www.TestMart.com")
 public interface ProductCatalogInterface {
 
@@ -21,6 +22,7 @@ public interface ProductCatalogInterface {
 	boolean addProduct(String category, String product);
 	
 	@WebMethod
+	@WebResult(name = "Product")
 	List<Product> getProductsV2(String category);
 
 }
