@@ -1,0 +1,57 @@
+git url
+
+https://github.com/navinreddy20/Spring_Course/tree/master/25%20springmvc
+
+
+
+Db queries
+
+
+
+SELECT * FROM hibdb.course;
+
+create table hibdb.circle(
+  id int(11) ,
+  name varchar(255) );
+  
+  select * from hibdb.circle;
+  
+  insert into hibdb.circle values(1,'First circle');
+  insert into hibdb.circle values(2,'Second circle');
+  
+use hibdb;  
+
+drop table alian;
+  create table hibdb.alian(
+  aid int(11) ,
+  aname varchar(255) );
+  
+   insert into hibdb.alian values(101,'Sagar rao');
+   insert into hibdb.alian values(102,'Ramya');
+  
+
+select * from hibdb.alian;
+
+
+
+ create table hibdb.alian(
+  aid int(11) ,
+  aname varchar(255) );
+  
+  
+  
+  
+  decrpt password for below users
+  
+  bcrpt generator site
+  https://bcrypt-generator.com/
+  
+  
+  bcrpt password will be stored in mysql DB
+  
+  user  password
+  sanju abcd
+  suresh 1234
+  
+  
+  
