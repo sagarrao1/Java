@@ -1,4 +1,4 @@
-package com.paolo.oops.pkg3;
+package com.paolo.oops.inheritence;
 
 public class HighVisibilityAlarmMain {
 

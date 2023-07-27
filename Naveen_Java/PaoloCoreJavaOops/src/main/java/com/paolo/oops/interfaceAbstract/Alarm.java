@@ -1,10 +1,11 @@
 // Adding Snoozing functionality to Alarm class
 
-package com.paolo.oops.pkg2;
+package com.paolo.oops.interfaceAbstract;
 
+import java.awt.Color;
 import java.time.LocalDateTime;
 
-public class Alarm {
+public abstract class Alarm implements Widget, PersistentObject{
 
 	protected boolean active;
 	private final String message;
@@ -79,6 +80,17 @@ public class Alarm {
 		return snoozeUntil;
 	}
 
+	public abstract Color getColor();
+
+	@Override
+	public void save() {
+		System.out.println("Saving .....");
+	}
+
+	@Override
+	public String getHelpText() {
+		return "Hi I am Alarm. You can turn me on and off. snooze me";
+	}
 	
 
 }

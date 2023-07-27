@@ -1,6 +1,6 @@
-package com.paolo.oops.pkg3;
+package com.paolo.oops.interfaceAbstract;
 
-import com.paolo.oops.pkg2.Alarm;
+import java.awt.Color;
 
 public class HightVisibilityAlarm extends Alarm{
 
@@ -34,7 +34,17 @@ public class HightVisibilityAlarm extends Alarm{
 		HightVisibilityAlarm h = new HightVisibilityAlarm("High visibility Alarm");
 		h.turnOn();
 		System.out.println(h.getReport(true));
-		h.sendReport();
-	}	
+		h.sendReport();	
+	}
+
+	@Override
+	public Color getColor() {
+		return Color.GREEN;
+	}
+	
+//	@Override
+//	public String getHelpText() {
+//		return "This is high visibility Alarm help text";
+//	}
 
 }
