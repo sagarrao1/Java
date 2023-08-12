@@ -12,8 +12,6 @@ target/
 .settings
 .springBeans
 .sts4-cache
-*.class
-*.MF
 
 ### IntelliJ IDEA ###
 .idea
@@ -39,5 +37,11 @@ build/
 **/kafka-logs-2/**
 **/kafka-logs-3/**
 **/zookeeperlogsM/**
+**/zookeeperlogs/**
+
+
+#$ bin##
+
+**/bin/**
 
 
