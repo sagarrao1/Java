@@ -14,7 +14,9 @@ import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.RepetitionInfo;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestReporter;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 import org.junit.jupiter.api.condition.EnabledOnOs;
 import org.junit.jupiter.api.condition.OS;
@@ -23,6 +25,9 @@ import org.junit.jupiter.api.condition.OS;
 class MathUtilsTest {	
 	MathUtils math;
 	
+	TestInfo testInfo= null; 
+	TestReporter  testReporter=null;
+	
 	@BeforeAll
 	static void beforallClean() {
 		System.out.println("before all cleaning up ... step....@BeforeAll..");
@@ -30,7 +35,10 @@ class MathUtilsTest {
 	
 	
 	@BeforeEach
-	void setUp() {
+	void setUp(TestInfo testInfo, TestReporter  testReporter) {
+		this.testInfo = testInfo;
+		this.testReporter = testReporter;		
+//		testReporter.publishEntry(" Running Test info "+testInfo.getDisplayName() +", tags :"+ testInfo.getTags());
 		math= new MathUtils();
 		System.out.println("setup ...@BeforeEach");
 	 }
@@ -101,7 +109,17 @@ class MathUtilsTest {
 	
 //	AssertAll example
 	@Test
+	@Tag("Multiply")
 	void testMultilpy() {
+		
+//		Testinfo and Testreporter example.  there are intefaces in Junit 5
+//		we can use them get any info or print anythis in test report 
+//		we can use them as dependency injection. we don't need to know what will underlying implementation
+		
+//		System.out.println(" Runnin Test info " + testInfo.getTags());
+		testReporter.publishEntry(" Running Test info "+testInfo.getDisplayName()+" tags :" + testInfo.getTags());
+		
+		
 //		assertEquals(4, math.multiply(1, 1), "should return ritgh product");
 //		asserAll uses Lambdas
 		assertAll(
@@ -144,6 +162,8 @@ class MathUtilsTest {
 	void testCircleRadiusTag() {
 		//MathUtils math= new MathUtils();
 		System.out.println("test circleradius");
+		
+		
 		assertEquals(54.07865000000002, math.circleArea(4.15),"should return right value");
 		
 	}
