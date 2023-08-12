@@ -19,6 +19,6 @@ public class MathUtils {
 	}
 		
 	public double circleArea(double raidus) {
-		return 16.1415;
+		return 3.14 *raidus*raidus;
 	}
 }
