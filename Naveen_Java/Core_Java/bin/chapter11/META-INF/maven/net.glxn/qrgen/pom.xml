@@ -40,7 +40,7 @@
 
     <properties>
         <zxing.version>2.0</zxing.version>
-        <junit.version>4.8.2</junit.version>
+        <junit.version>4.13.1</junit.version>
         <maven-compiler-plugin.source>1.6</maven-compiler-plugin.source>
         <maven-compiler-plugin.target>1.6</maven-compiler-plugin.target>
         <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
