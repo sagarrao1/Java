@@ -10,9 +10,9 @@ class CompImpl implements Comparator<Integer>{
 	@Override
 	public int compare(Integer o1, Integer o2) {
 		if(o1%10>o2%10)
-			return 1; // don't swap
+			return 1; // swap
 		
-		return  -1; // swap	
+		return  -1; // don't swap	
 	}
 	
 }
@@ -32,9 +32,9 @@ public class ComparatorDemo {
 		// that interface object will have logic of customized sorting
 		/*
 		 * Comparator<Integer> comp=new Comparator<Integer>() { public int
-		 * compare(Integer o1, Integer o2) { if(o1%10>o2%10) return 1; // don't swap
+		 * compare(Integer o1, Integer o2) { if(o1%10>o2%10) return 1; // swap
 		 * 
-		 * return -1; // swap }
+		 * return -1; // don't swap }
 		 * 
 		 * };
 		 */		
@@ -43,9 +43,9 @@ public class ComparatorDemo {
 		{ 
 			//return o1%10>o2%10?1:-1;
 			
-			 * if(o1%10>o2%10) return 1; // don't swap
+			 * if(o1%10>o2%10) return 1; //  swap
 			 * 
-			 * return -1; //swap
+			 * return -1; // don't swap
 			 			} ; */
 		
 			// Lambda expression with comparator interface

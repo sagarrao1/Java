@@ -173,7 +173,7 @@
    <soapenv:Body>\r
       <tes:getProducts>\r
          <!--Optional:-->\r
-         <arg0>Books</arg0>\r
+         <arg0>books</arg0>\r
       </tes:getProducts>\r
    </soapenv:Body>\r
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.TestMart.com/TestMartCatalog/getProductsRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="833effd1-baf8-4bae-a17a-572072075c97" isOneWay="false" action="" name="getProductsV2" bindingOperationName="getProductsV2" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0552b8fe-846b-4096-be63-f434686b4eaa" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://desktop-kobu9qu:8080/TestMart/TestMartCatalogService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tes="http://www.TestMart.com">\r

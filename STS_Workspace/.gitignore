@@ -1,0 +1,20 @@
+/.metadata/
+/.recommenders/
+
+# Eclipse
+*.classpath
+*.project
+*.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+*.smarttomcat
+
+# Mac
+.DS_Store
+
+# Maven
+*log/
+*target/
