@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+ <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
@@ -18,7 +18,13 @@
 
 	<form action="getAlian">
 	 	<br><br>
-		Enter your id : <input type="text" name="aid"/> <br>
+		Enter your id : <input type="text" name="aid"/> <br>		
+		<input type="submit">	
+	</form>
+	
+	<form action="getAlianByName">
+	 	<br><br>
+		Enter name you want to search: <input type="text" name="aname"/> <br>		
 		<input type="submit">	
 	</form>
 	

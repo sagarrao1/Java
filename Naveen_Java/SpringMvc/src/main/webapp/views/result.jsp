@@ -7,7 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+	You added Alian : ${alian} <br>
+
 	Your details are : ${a1} <br>  	
-	Welcome back ${name}
+	Welcome back <b>${name}</b>  <br>
+	Sum of two numbers is : ${num3}
 </body>
 </html>

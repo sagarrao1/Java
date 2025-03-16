@@ -2,8 +2,13 @@ package com.naveen.SpringMvc.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 
 @Entity
+@org.hibernate.annotations.NamedQueries({
+    @org.hibernate.annotations.NamedQuery(name = "hql_alian_select", 
+      query = "from Alian where aname=:aname")
+})
 public class Alian {
 	
 	@Id
@@ -28,6 +33,13 @@ public class Alian {
 	
 	public void setAid(int aid) {
 		this.aid = aid;
+	}
+
+	
+	public Alian(int aid, String aname) {
+		super();
+		this.aid = aid;
+		this.aname = aname;
 	}
 
 	@Override

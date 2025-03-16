@@ -14,6 +14,7 @@ import com.naveen.SpringMvc.model.Alian;
 
 @Component
 public class AlianDao {
+
 	
 	@Autowired
 	SessionFactory sessionFactory;	
@@ -32,10 +33,19 @@ public class AlianDao {
 	}
 
 	@Transactional
-	public Alian getAlian(int aid) {
+	public Alian getAlian(int id) {
 		Session session = sessionFactory.getCurrentSession();
-		Alian a = session.get(Alian.class,aid);
-		return a;
+		Alian alian = session.get(Alian.class, id);
+		return alian;
+	}
+
+	@Transactional
+	public Alian getAlianByName(String aname) {
+		Session session = sessionFactory.getCurrentSession();
+		Query<Alian> namedQuery = session.getNamedQuery("hql_alian_select");
+		namedQuery.setParameter("aname", aname);
+		Alian alian = namedQuery.getSingleResult();
+		return alian;
 	}
 
 }
