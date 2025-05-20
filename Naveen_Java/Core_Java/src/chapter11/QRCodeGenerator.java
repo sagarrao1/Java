@@ -14,7 +14,7 @@ public class QRCodeGenerator {
 		String details="Sagar Java QR learning.......";
 		
 		ByteArrayOutputStream out= QRCode.from(details).to(ImageType.JPG).stream();
-		File f=new File("C:\\PracticeJava\\workspace\\Naveen_Java\\src\\chapter11\\Sagar_channel.jpg");
+		File f=new File("C:\\PracticeJava\\workspace\\Naveen_Java\\Core_Java\\src\\chapter11\\Sagar_channel.jpg");
 		
 		FileOutputStream fos=new FileOutputStream(f);
 		
