@@ -30,7 +30,9 @@ class B extends A
 		System.out.println("B's constructor");
 	}
 	 public B(int i) 
-	 { 		 
+	 { 	
+//		 super(i);
+//		 this();
 		 System.out.println("B's constructor with Int "); 
      }	 
 }

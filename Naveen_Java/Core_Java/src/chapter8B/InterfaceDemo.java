@@ -6,7 +6,7 @@ public class InterfaceDemo {
 		// TODO Auto-generated method stub
 		A obj=new C();
 		obj.show();
-		//obj.display();  // you are restricting not to use other methods of class by using reference variable of Interface A obj.s
+		//obj.display();  // you are restricting not to use other methods of class by using reference variable of Interface A obj
 	}
 }
 
