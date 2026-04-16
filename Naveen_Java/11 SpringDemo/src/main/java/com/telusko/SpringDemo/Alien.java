@@ -13,6 +13,7 @@ public class Alien {
 	}
 
 	public void setCom(Computer com) {
+		System.out.println("Setter injecttion. com Assigned");
 		this.com = com;
 	}
 
@@ -28,6 +29,11 @@ public class Alien {
 	public void code() {
 		System.out.println("Im Coding..");
 		com.compile();
+	}
+
+	public Alien(Computer com, int age) {
+		this.com = com;
+		this.age = age;
 	}
 
 	public Alien(int age) {
